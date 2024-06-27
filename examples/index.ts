@@ -4,6 +4,7 @@ import jupiterSwap from './jupiter-swap/route';
 import { cors } from 'hono/cors';
 import { swaggerUI } from '@hono/swagger-ui';
 import { OpenAPIHono } from '@hono/zod-openapi';
+import predict from './predict/route';
 
 const app = new OpenAPIHono();
 app.use('/*', cors());
@@ -11,6 +12,7 @@ app.use('/*', cors());
 // <--Actions-->
 app.route('/api/donate', donate);
 app.route('/api/jupiter/swap', jupiterSwap);
+app.route('/api/predict', predict);
 // </--Actions-->
 
 app.doc('/doc', {
