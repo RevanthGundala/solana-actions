@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./", // Change this to include both api and spec directories
     "strict": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node"],
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
-  }
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["api/**/*.ts", "spec/**/*.ts"] // Include spec directory
 }
